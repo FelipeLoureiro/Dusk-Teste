@@ -13,7 +13,7 @@ class LoginPapTest extends DuskTestCase
     public function testExample()
     {
         $user = factory(\App\User::class)->create([
-            'email' => '04782044186',
+            'cpf' => '04782044186',
             'password' => '20160810',
 
         ]);
@@ -21,7 +21,7 @@ class LoginPapTest extends DuskTestCase
         $this->browse(function ($browser) use ($user) {
             $browser->visit('https://betasun.before.com.br/_sys/')
             ->select('can_id', 2)
-            ->type("us_re", $user->email)
+            ->type("us_re", $user->cpf)
             ->type("us_senha", $user->password)
                 ->press("Entrar");
 
