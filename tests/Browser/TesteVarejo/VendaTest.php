@@ -7,6 +7,7 @@
  */
 namespace Tests\Browser\TesteVarejo;
 
+use Tests\Browser\Pages\UsuarioLogin;
 use Tests\Browser\TesteVarejo\FuncaoElementos;
 use Tests\Browser\Pages\FuncoesSun;
 
@@ -17,11 +18,6 @@ use Laravel\Dusk\Browser;
 class VendaTest extends DuskTestCase
 {
 
-    public $Canal       = '2';
-    public $UsuariCpf   = '02177959195';
-    public $Senha       = '1';
-
-
     /**
      * @test
      */
@@ -30,7 +26,7 @@ class VendaTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
 
             $browser->on(new FuncoesSun())
-                ->logar($this->getCanal(), $this->getUsuariCpf(), $this->getSenha());
+                ->logar(UsuarioLogin::CANAL_VAREJO);
 
             // Caminho para entrar na pagina especifica do menu;
             $browser->on(new MenuPage)
@@ -60,45 +56,7 @@ class VendaTest extends DuskTestCase
             $browser->with(!'#'.$idAutoComplet, '.ui-autocomplete', function ($item){
                     $item->click('.ui-menu-item-wrapper', 'Vendedor - 88500110163 - Everton Fatina');
                 });
-
-
-
-            if(!$idAutoComplet){
-
-            }
-
-            $browser->
-            $browser->click('#div_dados_venda_uf');
-            $browser->waitFor('#us_id_aux');
-
-
-
         });
 
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCanal(): string
-    {
-        return $this->Canal;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUsuariCpf(): string
-    {
-        return $this->UsuariCpf;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSenha(): string
-    {
-        return $this->Senha;
     }
 }

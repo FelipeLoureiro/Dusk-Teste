@@ -17,29 +17,30 @@ class CaminhoMenu
     public static function ListagemMenu(){
 
         return [
-            'CadastroUsuario' => [  'Menu'          => '#menu_6',
-                                    'SubMenu'       => '#submenu_6_3',
-                                    'Grupo'         => '.subCapa8',
-                                    'BotaoItem'     => '#Usuario_corBotaoInsere',
-                                    'FormTela'      => '#formUsuario'],
-
-            'CadastroFuncao' => [   'Menu'          => '#menu_6',
-                                    'SubMenu'       => '#submenu_6_3',
-                                    'Grupo'         => '.subCapa9',
-                                    'BotaoItem'     => '#Funcao_corBotaoInsere',
-                                    'FormTela'      => '#formFuncao'],
-
-            'BuscarFuncao' => [     'Menu'          => '#menu_6',
-                                    'SubMenu'       => '#submenu_6_3',
-                                    'Grupo'         => '.subCapa9',
-                                    'BotaoItem'     => '#Funcao_corBotaoBusca',
-                                    'FormTela'      => '#busca9'],
-
-            'InserirVenda' => [     'Menu'          => '#menu_7',
-                                    'SubMenu'       => '#submenu_7_6',
-                                    'Grupo'         => '.subCapa22',
-                                    'BotaoItem'     => '#VendaSun_corBotaoInsere',
-                                    'FormTela'      => '#form22'],
+            'InserirUsuario' => [   'Menu'          => ['#menu_6'],
+                                    'SubMenu'       => ['#submenu_6_3'],
+                                    'Grupo'         => ['Usuário'],
+                                    'BotaoItem'     => ['#MenuModulo8','.corBotaoInsere', 'Inserir Registro'],
+                                    'FormTela'      => ['#formUsuario']
+            ],
+            'InserirFuncao' => [    'Menu'          => ['#menu_6'],
+                                    'SubMenu'       => ['#submenu_6_3'],
+                                    'Grupo'         => ['Função'],
+                                    'BotaoItem'     => ['#MenuModulo9','.corBotaoInsere', 'Inserir Registro'],
+                                    'FormTela'      => ['#formFuncao']
+            ],
+            'BuscarFuncao' => [     'Menu'          => ['#menu_6'],
+                                    'SubMenu'       => ['#submenu_6_3'],
+                                    'Grupo'         => ['Função'],
+                                    'BotaoItem'     => ['#MenuModulo9','.corBotaoBusca', 'Buscar Registro'],
+                                    'FormTela'      => ['#busca9']
+            ],
+            'InserirVenda' => [     'Menu'          => ['#menu_7'],
+                                    'SubMenu'       => ['#submenu_7_6'],
+                                    'Grupo'         => ['Venda'],
+                                    'BotaoItem'     => ['#MenuModulo22','.corBotaoInsere', 'Inserir Registro'],
+                                    'FormTela'      => ['#form22']
+            ],
         ];
     }
 }

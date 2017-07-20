@@ -26,7 +26,7 @@ class UrlPage extends BasePage
      */
     public function assert(Browser $browser)
     {
-        $browser->assertPathIsNot($this->url());
+        //$browser->assertPathIsNot($this->url());
     }
 
     /**
