@@ -1,16 +1,18 @@
 <?php
 
-namespace Tests\Browser\Pages;
+namespace tests\Browser\Pages;
 
 use Laravel\Dusk\Browser;
+use Laravel\Dusk\Page as BasePage;
 
-class HomePage extends Page
+class UrlPage extends BasePage
 {
     /**
      * Get the URL for the page.
      *
      * @return string
      */
+
     public function url()
     {
         return '/';
@@ -24,7 +26,7 @@ class HomePage extends Page
      */
     public function assert(Browser $browser)
     {
-        //
+        //$browser->assertPathIsNot($this->url());
     }
 
     /**
@@ -38,4 +40,8 @@ class HomePage extends Page
             '@element' => '#selector',
         ];
     }
+
 }
+
+
+
